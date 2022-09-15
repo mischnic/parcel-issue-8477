@@ -1,0 +1,14 @@
+{
+  "private": true,
+  "dependencies": {
+    "@parcel/resolver-glob": "2.7.0",
+    "lodash": "4.17.21",
+    "parcel": "2.7.0"
+  },
+  "scripts": {
+    "build": "parcel build index.js --no-optimize",
+    "repro": "rm -rf .parcel-cache; yarn build; yarn rename1; yarn rename2; yarn build",
+    "rename1": "mv node_modules/lodash/package.json node_modules/lodash/package2.json",
+    "rename2": "mv node_modules/lodash/package2.json node_modules/lodash/package.json"
+  }
+}
